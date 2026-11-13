@@ -110,11 +110,25 @@ header.scrolled {
   color: var(--sage-dark);
 }
 
+.brand span {
+  display: flex;
+  flex-direction: column; /* Garante que "ESPAÇO CRIARE" fique em cima e o nome embaixo */
+}
+
 .brand small {
   display: block;
-  font: .72rem Arial, sans-serif;
-  letter-spacing: .12em;
+  font: .65rem Arial, sans-serif; /* Aumentado de .6rem para .65rem */
+  letter-spacing: .05em; 
   color: var(--muted);
+  white-space: nowrap;
+}
+
+/* Retorna ao tamanho e espaçamento originais em telas maiores (tablets e PCs) */
+@media (min-width: 760px) {
+  .brand small {
+    font-size: .72rem;
+    letter-spacing: .12em;
+  }
 }
 
 /* botão hambúrguer (celular) */
@@ -970,7 +984,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 28px 4% 96px;
+  padding: 28px 4%;
   background: #526a61;
   color: #fff;
   text-align: center;
